@@ -1,7 +1,8 @@
 import React from 'react'
-import logo from './logo.svg'
 import './App.css'
-import Button from '@material-ui/core/Button'
+import Metas from './components/Metas'
+import CadastroMetas from './components/CadastroMetas'
+import Home from './components/Home'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
@@ -10,6 +11,8 @@ import {    BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
+
+
 
 const StyledTabs = withStyles({
   indicator: {
@@ -37,7 +40,6 @@ const StyledTab = withStyles(theme => ({
   },
 }))(props => <Tab disableRipple {...props} />)
 
-
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -60,19 +62,16 @@ function App() {
       <div className="App">
         <div className={classes.demo2}>
           <StyledTabs value={value} onChange={handleChange} aria-label="styled tabs example" centered>
-            <StyledTab label="Início" />
-            <StyledTab label="Cadastro" />
-            <StyledTab label="Metas" />
+            <Link to='/'><StyledTab label="Início" /></Link>
+            <Link to='/cadastros'><StyledTab label="Cadastro" /></Link>
+            <Link to='/metas'><StyledTab label="Metas" /></Link>
           </StyledTabs>
           <Typography className={classes.padding} />
         </div>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          
-          <Button variant="contained" color="primary">
-            Hello World
-          </Button>
-        </header>
+        
+        <Route exact path='/' component={Home} />
+        <Route path='/cadastros' component={CadastroMetas} />
+        <Route path='/metas' component={Metas} />
       </div>
     </Router>
   )
