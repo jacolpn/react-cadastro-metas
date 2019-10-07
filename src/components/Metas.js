@@ -63,10 +63,14 @@ class Metas extends React.Component {
         })
     }
 
+    deletarMetas(id) {
+        apis.deletarMetas(id).then((res)=> this.loadData())
+    }
+
     renderMetas(metas){
         return (
-            <div className={useStyles.root} >
-            <Paper className={useStyles.paper}  style={{'background-color': '#353b46', 'maxWidth': '1300px'}}>
+            <div key={metas.id} className={useStyles.root} style={{'max-width': '1100px'}} >
+            <Paper className={useStyles.paper} >
             <Grid container spacing={2}>
                 <Grid item>
                 <ButtonBase className={useStyles.image} >
@@ -76,20 +80,20 @@ class Metas extends React.Component {
                 <Grid item xs={12} sm container>
                 <Grid item xs container direction="column" spacing={1}>
                     <Grid item xs>
-                    <Typography gutterBottom variant="subtitle1" style={{'background-color': '#353b46', 'color': '#dbdddf'}}>
-                        <h1>{metas.titulo}</h1>
+                    <Typography gutterBottom variant="subtitle1" >
+                        <h2>{metas.titulo}</h2>
                     </Typography>
-                    <Typography variant="body2" gutterBottom style={{'background-color': '#353b46', 'color': '#c5cad3'}}>
+                    <Typography variant="body2" gutterBottom >
                         <b>Prioridade:</b> {statuses[metas.tipos]}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" style={{'background-color': '#353b46', 'color': '#c5cad3'}}>
+                    <Typography variant="body2" color="textSecondary" style={{'padding': '20px'}}>
                         {metas.descricao}
-                    </Typography>
-                    </Grid>
-                    <Grid item>
-                    <Button type="button" variant="contained" color="primary" onClick={this.salvarMetas} >Editar</Button>
-                    &nbsp;
-                    <Button type="button" variant="contained" color="secondary" onClick={this.salvarMetas} >Apagar</Button>
+                    </Typography>           
+                    <p>
+                        <Button type="button" variant="contained" color="primary">Editar</Button>
+                        &nbsp;
+                        <Button type="button" variant="contained" color="secondary" onClick={() => this.deletarMetas(metas.id)}>Apagar</Button>
+                    </p>
                     </Grid>
                 </Grid>
                 </Grid>
