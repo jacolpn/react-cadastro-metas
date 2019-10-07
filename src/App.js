@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import Metas from './components/Metas'
-import CadastroMetas from './components/CadastroMetas'
+import CadastroTOP from './components/CadastroTOP'
 import Home from './components/Home'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
 import Tabs from '@material-ui/core/Tabs'
@@ -30,7 +30,7 @@ const StyledTabs = withStyles({
 const StyledTab = withStyles(theme => ({
   root: {
     textTransform: 'none',
-    color: '#fff',
+    color: 'rgb(43, 39, 39)',
     fontWeight: theme.typography.fontWeightRegular,
     fontSize: theme.typography.pxToRem(18),
     marginRight: theme.spacing(1),
@@ -41,11 +41,8 @@ const StyledTab = withStyles(theme => ({
 }))(props => <Tab disableRipple {...props} />)
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  }, 
   demo2: {
-    backgroundColor: '#282c34',
+    backgroundColor: '#71798a',
   }
 }))
 
@@ -62,15 +59,15 @@ function App() {
       <div className="App">
         <div className={classes.demo2}>
           <StyledTabs value={value} onChange={handleChange} aria-label="styled tabs example" centered>
-            <Link to='/'><StyledTab label="Início" /></Link>
-            <Link to='/cadastros'><StyledTab label="Cadastro" /></Link>
+            <Link to='/'><StyledTab label="Início"  /></Link>
+            <Link to='/cadastros' ><StyledTab label="Cadastro" /></Link>
             <Link to='/metas'><StyledTab label="Metas" /></Link>
           </StyledTabs>
           <Typography className={classes.padding} />
         </div>
         
         <Route exact path='/' component={Home} />
-        <Route path='/cadastros' component={CadastroMetas} />
+        <Route path='/cadastros' component={CadastroTOP} />
         <Route path='/metas' component={Metas} />
       </div>
     </Router>

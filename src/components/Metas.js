@@ -1,13 +1,12 @@
 import React from 'react'
 import '../App.css'
-import apis from '../Api'
+import Apis from '../Api'
 import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
-
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -55,7 +54,7 @@ class Metas extends React.Component {
 
     loadData() {
         this.setState({isLoading: true})
-        apis.carregarMetas(this.state.metas).then((res)=>{
+        Apis.carregarMetas(this.state.metas).then((res)=>{
             this.setState({
                 isLoading: false,
                 metas: res.data
@@ -64,7 +63,7 @@ class Metas extends React.Component {
     }
 
     deletarMetas(id) {
-        apis.deletarMetas(id).then((res)=> this.loadData())
+        Apis.deletarMetas(id).then((res)=> this.loadData())
     }
 
     renderMetas(metas){
@@ -108,7 +107,7 @@ class Metas extends React.Component {
         return (
             <div className="app">
                 <header className="App-header">
-                    <h1>Bem Vindo as Suas Metas</h1>
+                    <h2>Bem vindo as suas Metas</h2>
                     <div id="series" className="row list-group">
                         {this.state.metas.map(this.renderMetas)}
                         

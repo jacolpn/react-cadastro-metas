@@ -1,19 +1,19 @@
 import axios from 'axios'
 
-const api = axios.create({
+const Api = axios.create({
     baseURL: 'http://localhost:3001/'
 })
 
-export const carregarMetas = () => api.get('metas')
-export const carregarTipos = () => api.get('tipos')
-export const salvarMetas = (novaMeta) => api.post('metas', novaMeta)
-export const deletarMetas = (id) => api.delete('metas/' + id)
+export const carregarMetas = () => Api.get('metas')
+export const carregarTipos = () => Api.get('tipos')
+export const salvarMetas = (novaMeta) => Api.post('metas', novaMeta)
+export const deletarMetas = (id) => Api.delete('metas/' + id)
 
-const apis = {
-    carregarMetas,
-    carregarTipos,
-    salvarMetas,
-    deletarMetas
-}
+export const Apis = {
+     carregarMetas,
+     carregarTipos,
+     salvarMetas,
+     deletarMetas
+ }
 
-export default apis
+export default Apis

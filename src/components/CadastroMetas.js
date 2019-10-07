@@ -1,13 +1,13 @@
 import React from 'react'
 import '../App.css'
 import apis from '../Api'
-import Button from '@material-ui/core/Button'
+import { Button, TextField, Select, MenuItem, FormHelperText } from '@material-ui/core'
 import { Redirect } from 'react-router-dom'
+import SimpleSelect from './form/Select'
 
 class CadastroMetas extends React.Component {
     constructor(props) {
         super(props)
-
         this.state = {
             tipos: [],
             isLoading: false,
@@ -25,7 +25,7 @@ class CadastroMetas extends React.Component {
 
     salvarMetas() {
         const novaMeta = {
-            titulo: this.refs.titulo.value,
+            titulo: this.keys.titulo.value,
             descricao: this.refs.descricao.value,
             tipos: this.refs.tipos.value
         }
@@ -45,6 +45,7 @@ class CadastroMetas extends React.Component {
                 <header className="App-header">
                     <h1>Hello Cadastro de Metas!</h1>
                     <form>
+                        
                         Titulo: <input type="text" ref='titulo' className="form-control"/> <br/>
                         Descrição: <input type="text" ref='descricao' className="form-control"/> <br/>                    
                         <select ref='tipos' >
@@ -52,7 +53,27 @@ class CadastroMetas extends React.Component {
                                 .map(key => <option key={key} value={key}>{key}</option>)
                             }
                         </select> <br />
+                        
                         <br/><br/>
+                        <Button type="button" variant="contained" color="primary" onClick={this.salvarMetas} >Salvar</Button>
+                    </form>
+
+                    <br /><br />
+                    <form >
+                        <h3>Um dia vai funcionar!</h3>
+                        <TextField label="Titulo..."/> <br />
+                        <TextField label="Descrição..."/> <br />
+                        <Select value={SimpleSelect.values}
+                                onChange={SimpleSelect.handleChange}          
+                                inputProps={{
+                                name: 'age',
+                                id: 'age-simple',
+                        }}>
+                            <MenuItem value={10}>Curto</MenuItem>
+                            <MenuItem value={20}>Médio</MenuItem>
+                            <MenuItem value={30}>Longo</MenuItem>
+                        </Select>
+                        <FormHelperText>Escolha com atenção!</FormHelperText> <br />
                         <Button type="button" variant="contained" color="primary" onClick={this.salvarMetas} >Salvar</Button>
                     </form>
                 </header>
