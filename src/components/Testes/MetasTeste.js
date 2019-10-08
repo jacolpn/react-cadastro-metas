@@ -1,6 +1,7 @@
 import React from 'react'
 import Apis from '../Api'
 import GridMeta from './Grid/GridMeta'
+import Home from './Home'
 
 class Metas extends React.Component {
     constructor(props) {
