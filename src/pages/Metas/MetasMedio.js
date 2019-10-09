@@ -1,8 +1,8 @@
 import React from 'react'
-import Apis from '../Api'
-import GridMeta from './Grid/GridMeta'
+import Apis from '../../services/Api'
+import GridMeta from '../../components/Grid/GridMeta'
 
-class Metas extends React.Component {
+class MetasMedio extends React.Component {
     constructor(props) {
         super(props)
 
@@ -20,12 +20,12 @@ class Metas extends React.Component {
 
     loadData() {
         this.setState({isLoading: true})
-        Apis.carregarMetas(this.state.metas).then((res)=>{
+        Apis.carregarMetasPorTipos('Médio').then((res)=>{
             this.setState({
                 isLoading: false,
                 metas: res.data
             })
-        })
+        }) 
     }
 
     deletarMetas(id) {
@@ -34,18 +34,18 @@ class Metas extends React.Component {
 
     renderMetas(metas){
         return (
-                <GridMeta   textPrimeiro={metas.titulo}
-                            textSegundo={metas.tipos}
-                            onClick={() => this.deletarMetas(metas.id)}
-                            key={metas.id}
-                />
+            <GridMeta   textPrimeiro={metas.titulo}
+                        textSegundo={metas.tipos}
+                        onClick={() => this.deletarMetas(metas.id)}
+                        key={metas.id}
+            />
         )
     }
 
     render(metas) {
         return (
             <div>
-                <h1>Bem vindo as suas Metas</h1>
+                <h1>Metas de médio prazo</h1>
                 <div id="series" className="row list-group" >
                     {this.state.metas.map(this.renderMetas)}
                 </div>                    
@@ -53,4 +53,4 @@ class Metas extends React.Component {
         )
     }
 }
-export default Metas
+export default MetasMedio

@@ -40,7 +40,7 @@ function Select({onChange, value}) {
                 }}
         >
           <MenuItem value={'Curto'}>Curto</MenuItem>
-          <MenuItem value={'Medio'}>Medio</MenuItem>
+          <MenuItem value={'Médio'}>Medio</MenuItem>
           <MenuItem value={'Longo'}>Longo</MenuItem>
         </SelecT>
       </FormControl>

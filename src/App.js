@@ -1,5 +1,5 @@
 import React from 'react'
-import BarraNavegacao from './components/BarraNavegacao'
+import BarraNavegacao from './pages/BarraNavegacao/BarraNavegacao'
 
 function App() {
   return (

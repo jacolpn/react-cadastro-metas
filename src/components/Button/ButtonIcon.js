@@ -13,8 +13,8 @@ function ButtonIcon({onClick}) {
   const classes = useStyles()
 
   return (
-    <IconButton aria-label="delete" className={classes.margin}>
-      <DeleteIcon fontSize="large" onClick={onClick}/>
+    <IconButton aria-label="delete" className={classes.margin} onClick={onClick}>
+      <DeleteIcon fontSize="large" />
     </IconButton>
   )
 }

@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
-import '../App.css'
-import Apis from '../Api'
-import TextField from './TextField/TextField'
-import Select from './Select/Select'
-import ButtonSalvar from './Button/ButtonSalvar'
+import '../../App.css'
+import Apis from '../../services/Api'
+import TextField from '../../components/TextField/TextField'
+import Select from '../../components/Select/Select'
+import ButtonSalvar from '../../components/Button/ButtonSalvar'
 import SaveIcon from '@material-ui/icons/Save'
 
 function Cadastro () {
     const [titulo, setTitulo] = useState('')
     const [descricao, setDescricao] = useState('')
     const [tipos, setTipos] = useState('')
-
 
     function clicouCadastrar(event) {
         event.preventDefault()        
@@ -20,7 +19,6 @@ function Cadastro () {
             tipos
         }
         Apis.salvarMetas(novaMeta)
-        Apis.carregarMetas()
         alert('Cadastrado com Sucesso!')
     }
     

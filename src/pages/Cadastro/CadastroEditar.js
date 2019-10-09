@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import '../App.css'
-import Apis from '../Api'
-import TextField from './TextField/TextField'
-import Select from './Select/Select'
-import ButtonSalvar from './Button/ButtonSalvar'
+import Apis from '../../services/Api'
+import TextField from '../../components/TextField/TextField'
+import Select from '../../components/Select/Select'
+import ButtonSalvar from '../../components/Button/ButtonSalvar'
 import SaveIcon from '@material-ui/icons/Save'
 
 function CadastroEditar () {

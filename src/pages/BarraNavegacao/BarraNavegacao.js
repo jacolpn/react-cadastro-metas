@@ -7,9 +7,9 @@ import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
-import Metas from './Metas'
-import Cadastro from './Cadastro'
-import Home from './Home'
+import Metas from '../Metas/Metas'
+import Cadastro from '../Cadastro/Cadastro'
+import Home from '../Home/Home'
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props
@@ -70,7 +70,7 @@ function BarraNavegacao() {
                         aria-label="full width tabs example"
                 >
                     <Tab label="Início" {...a11yProps(0)} />
-                    <Tab label="Cadastro" {...a11yProps(1)} />
+                    <Tab label="cadastros" {...a11yProps(1)} />
                     <Tab label="Metas" {...a11yProps(2)} />
                 </Tabs>
             </AppBar>
