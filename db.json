@@ -17,11 +17,12 @@
       "titulo": "Certificação MTA JavaScript",
       "descricao": "Os candidatos para este exame devem ser capazes de reconhecer e escrever códigos JavaScript sintaticamente corretos. usar tipos de dados suportados pelo JavaScript e poder reconhecer e escrever código JavaScript que solucionará logicamente um determinado problema. Espera-se que os candidatos tenham pelo menos 100 horas de instrução ou experiência prática com a linguagem de programação JavaScript. Os candidatos também devem estar familiarizados com os recursos e capacidades JavaScript e entender como escrever, depurar e manter um código de JavaScript bem formado e bem documentado.",
       "tipos": "Longo"
+    },
+    {
+      "titulo": "Jackson Luís",
+      "descricao": "Peres",
+      "tipos": "Curto",
+      "id": 5
     }
-  ],
-  "tipos": [
-    "Curto",
-    "Médio",
-    "Longo"
   ]
 }
