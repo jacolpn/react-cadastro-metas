@@ -5,11 +5,11 @@ import DeleteIcon from '@material-ui/icons/Delete'
 
 const useStyles = makeStyles(theme => ({
   margin: {
-    margin: theme.spacing(1),
+    margin: '-20px 0 0 305px',
   }
 }))
 
-function ButtonIcon({onClick}) {
+export default function ButtonIcon({onClick}) {
   const classes = useStyles()
 
   return (
@@ -18,4 +18,3 @@ function ButtonIcon({onClick}) {
     </IconButton>
   )
 }
-export default ButtonIcon

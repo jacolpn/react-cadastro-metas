@@ -1,8 +1,10 @@
 import React from 'react'
-import Apis from '../../services/Api'
-import GridMeta from '../../components/Grid/GridMeta'
+import Apis from '../../services/api'
+import GridMeta from '../../components/Grid/gridMeta'
+import { Link } from 'react-router-dom'
+import ButtonIcon from '../../components/Button/buttonIcon'
 
-class MetasCurto extends React.Component {
+export default class MetasCurto extends React.Component {
     constructor(props) {
         super(props)
 
@@ -29,17 +31,27 @@ class MetasCurto extends React.Component {
         
     }
 
+    navegarMetaSelecionada(id) {
+        localStorage.setItem('user', id)
+    }
+
     deletarMetas(id) {
         Apis.deletarMetas(id).then((res)=> this.loadData())
     }
 
     renderMetas(metas){
         return (
-            <GridMeta   textPrimeiro={metas.titulo}
-                        textSegundo={metas.tipos}
-                        onClick={() => this.deletarMetas(metas.id)}
-                        key={metas.id}
-            />
+            <>
+                <Link to={'/meta_selecionada/' + metas.id} onClick={() => this.navegarMetaSelecionada(metas.id)}>
+                    <GridMeta   textPrimeiro={metas.titulo}
+                                textSegundo={metas.tipos}
+                                onClick={() => this.deletarMetas(metas.id)}
+                                key={metas.id}
+                                to={'/meta_selecionada/'}
+                    />
+                </Link>
+                <ButtonIcon onClick={() => this.deletarMetas(metas.id)}/>
+            </>
         )
     }
 
@@ -49,9 +61,8 @@ class MetasCurto extends React.Component {
                 <h1>Metas de curto prazo</h1>
                 <div id="series" className="row list-group" >
                     {this.state.metas.map(this.renderMetas)}
-                </div>                    
+                </div>
             </div>
         )
     }
 }
-export default MetasCurto
