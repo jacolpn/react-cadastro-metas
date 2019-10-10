@@ -4,7 +4,7 @@ import MetasLongo from './metasLongo'
 import MetasMedio from './metasMedio'
 import BarraNavegacao from '../BarraNavegacao/barraNavegacao'
 
-export default function Metas() {
+function Metas() {
     return (
         <div>
             <BarraNavegacao />
@@ -14,3 +14,4 @@ export default function Metas() {
         </div>
     )
 }
+export default Metas

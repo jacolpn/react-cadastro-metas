@@ -6,7 +6,7 @@ import ButtonSalvar from '../../components/Button/buttonSalvar'
 import SaveIcon from '@material-ui/icons/Save'
 import BarraNavegacao from '../BarraNavegacao/barraNavegacao'
 
-export default function Cadastro () {
+function Cadastro () {
     const [titulo, setTitulo] = useState('')
     const [descricao, setDescricao] = useState('')
     const [tipos, setTipos] = useState('')
@@ -25,7 +25,7 @@ export default function Cadastro () {
     return (
         <div>
             <BarraNavegacao />
-            <h1>Cadastrar uma meta:</h1>
+            <h2>Cadastrar uma meta:</h2>
             <form autoComplete="off" onSubmit={clicouCadastrar} className="">
                 <TextField  placeholder='Coloque um titulo aqui.'
                             label='Titulo'
@@ -52,3 +52,4 @@ export default function Cadastro () {
         </div>
     )
 }
+export default Cadastro

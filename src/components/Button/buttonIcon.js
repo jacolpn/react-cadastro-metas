@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function ButtonIcon({onClick}) {
+function ButtonIcon({onClick}) {
   const classes = useStyles()
 
   return (
@@ -18,3 +18,4 @@ export default function ButtonIcon({onClick}) {
     </IconButton>
   )
 }
+export default ButtonIcon

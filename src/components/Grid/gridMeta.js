@@ -4,19 +4,22 @@ import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Avatar from '@material-ui/core/Avatar'
 import Typography from '@material-ui/core/Typography'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   paper: {
     maxWidth: 400,
     margin: `${theme.spacing(1)}px auto`,
     padding: theme.spacing(2),
-  }
+  },
+  effects: {
+    textDecoration: 'none',}
 }))
 
-export default function GridMeta({textPrimeiro, textSegundo}) {
-  const classes = useStyles()
-  
+function GridMeta({textPrimeiro, textSegundo,to,onClick}) {
+  const classes = useStyles()  
   return (
+    <Link to={to} onClick={onClick} className={classes.effects} >
     <Paper className={classes.paper} >
       <Grid container wrap="nowrap" spacing={1} >
         <Grid item>
@@ -30,5 +33,7 @@ export default function GridMeta({textPrimeiro, textSegundo}) {
         </Grid>
       </Grid>
     </Paper>
+    </Link>
   )
 }
+export default GridMeta

@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function Select({onChange, value}) {
+function Select({onChange, value}) {
   const classes = useStyles()
   const [open, setOpen] = React.useState(false)
     
@@ -46,3 +46,4 @@ export default function Select({onChange, value}) {
       </FormControl>
   )
 }
+export default Select

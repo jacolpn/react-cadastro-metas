@@ -1,10 +1,8 @@
 import React from 'react'
 import Apis from '../../services/api'
-import GridMeta from '../../components/Grid/gridMeta'
-import { Link } from 'react-router-dom'
-import ButtonIcon from '../../components/Button/buttonIcon'
+import CardMeta from '../../components/Card/cardMeta'
 
-export default class MetasLongo extends React.Component {
+class MetasLongo extends React.Component {
     constructor(props) {
         super(props)
 
@@ -40,24 +38,22 @@ export default class MetasLongo extends React.Component {
 
     renderMetas(metas){
         return (
-            <>
-                <Link to={'/meta_selecionada/' + metas.id} onClick={() => this.navegarMetaSelecionada(metas.id)}>
-                    <GridMeta   textPrimeiro={metas.titulo}
-                                textSegundo={metas.tipos}
-                                onClick={() => this.deletarMetas(metas.id)}
-                                key={metas.id}
-                                to={'/meta_selecionada/'}
-                    />
-                </Link>
-                <ButtonIcon onClick={() => this.deletarMetas(metas.id)}/>
-            </>
+            <div key={metas.id}>
+                <CardMeta   textPrim={metas.titulo}
+                            textSeg={metas.tipos}
+                            textTec={metas.descricao}
+                            onClickDel={() => this.deletarMetas(metas.id)}
+                            onClickMore={() => this.navegarMetaSelecionada(metas.id)}
+                            toMore={'/meta_selecionada/' + metas.id} 
+                />
+            </div>
        )
     }
 
     render(metas) {
         return (
             <div>
-                <h1>Metas de longo prazo</h1>
+                <h2>Longo Prazo</h2>
                 <div id="series" className="row list-group" >
                     {this.state.metas.map(this.renderMetas)}
                 </div>                    
@@ -65,3 +61,4 @@ export default class MetasLongo extends React.Component {
         )
     }
 }
+export default MetasLongo

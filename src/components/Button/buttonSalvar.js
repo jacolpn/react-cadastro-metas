@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function ButtonSalvar({type, onClick, children, startIcon, size}) {
+function ButtonSalvar({type, onClick, children, startIcon, size}) {
   const classes = useStyles()
 
   return (
@@ -22,3 +22,4 @@ export default function ButtonSalvar({type, onClick, children, startIcon, size})
     />
   )
 }
+export default ButtonSalvar

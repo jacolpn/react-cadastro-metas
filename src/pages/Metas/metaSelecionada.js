@@ -1,8 +1,9 @@
 import React from 'react'
 import Apis from '../../services/api'
 import {Link} from 'react-router-dom'
+import BarraNavegacao from '../BarraNavegacao/barraNavegacao'
 
-export default class MetaSelecionada extends React.Component {
+class MetaSelecionada extends React.Component {
     constructor(props) {
         super(props)
 
@@ -35,6 +36,9 @@ export default class MetaSelecionada extends React.Component {
                 <p>{metas.titulo}</p>
                 <p>{metas.tipos}</p>
                 <p>{metas.descricao}</p>
+                <Link to={'/meta_edit/' + metas.id}>Editar</Link>
+                &nbsp;
+                <Link to='/metas'>Voltar</Link>                
             </div>
         )
     }
@@ -42,12 +46,13 @@ export default class MetaSelecionada extends React.Component {
     render(metas) {
         return (
             <div>
+                <BarraNavegacao />
                 <h1>Metas de médio prazo</h1>
                 <div id="series" className="row list-group" >
                     {this.state.metas.map(this.renderMetas)}
                 </div>
-                <Link to='/metas'>Voltar</Link>                
             </div>
         )
     }
 }
+export default MetaSelecionada

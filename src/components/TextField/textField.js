@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function TextField({placeholder, label, value, onChange}) {
+function TextField({placeholder, label, value, onChange}) {
   const classes = useStyles()
 
   return (
@@ -28,3 +28,4 @@ export default function TextField({placeholder, label, value, onChange}) {
     />
   )
 }
+export default TextField
