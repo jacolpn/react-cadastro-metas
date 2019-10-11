@@ -5,7 +5,7 @@ import DeleteIcon from '@material-ui/icons/Delete'
 
 const useStyles = makeStyles(theme => ({
   margin: {
-    margin: theme.spacing(1),
+    margin: '-20px 0 0 305px',
   }
 }))
 

@@ -1,8 +1,8 @@
 import React from 'react'
-import Apis from '../../services/Api'
-import GridMeta from '../../components/Grid/GridMeta'
+import Apis from '../../services/api'
+import CardMeta from '../../components/Card/cardMeta'
 
-class MetasMedio extends React.Component {
+class MetasCurto extends React.Component {
     constructor(props) {
         super(props)
 
@@ -20,12 +20,16 @@ class MetasMedio extends React.Component {
 
     loadData() {
         this.setState({isLoading: true})
-        Apis.carregarMetasPorTipos('Médio').then((res)=>{
+        Apis.carregarMetasPorTipos('Curto').then((res)=>{
             this.setState({
                 isLoading: false,
                 metas: res.data
             })
-        }) 
+        })
+    }
+
+    navegarMetaSelecionada(id) {
+        localStorage.setItem('user', id)
     }
 
     deletarMetas(id) {
@@ -34,23 +38,27 @@ class MetasMedio extends React.Component {
 
     renderMetas(metas){
         return (
-            <GridMeta   textPrimeiro={metas.titulo}
-                        textSegundo={metas.tipos}
-                        onClick={() => this.deletarMetas(metas.id)}
-                        key={metas.id}
-            />
+            <div key={metas.id}>
+                <CardMeta   textPrim={metas.titulo}
+                            textSeg={metas.tipos}
+                            textTec={metas.descricao}
+                            onClickDel={() => this.deletarMetas(metas.id)}
+                            onClickMore={() => this.navegarMetaSelecionada(metas.id)}
+                            toMore={'/meta_selecionada/' + metas.id} 
+                />
+            </div>
         )
     }
 
     render(metas) {
         return (
             <div>
-                <h1>Metas de médio prazo</h1>
+                <h2>Curto Prazo</h2>
                 <div id="series" className="row list-group" >
                     {this.state.metas.map(this.renderMetas)}
-                </div>                    
+                </div>
             </div>
         )
     }
 }
-export default MetasMedio
+export default MetasCurto

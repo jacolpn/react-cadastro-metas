@@ -1,8 +1,8 @@
 import React from 'react'
-import Apis from '../../services/Api'
-import GridMeta from '../../components/Grid/GridMeta'
+import Apis from '../../services/api'
+import CardMeta from '../../components/Card/cardMeta'
 
-class MetasLongo extends React.Component {
+class MetasMedio extends React.Component {
     constructor(props) {
         super(props)
 
@@ -20,12 +20,16 @@ class MetasLongo extends React.Component {
 
     loadData() {
         this.setState({isLoading: true})
-        Apis.carregarMetasPorTipos('Longo').then((res)=>{
+        Apis.carregarMetasPorTipos('Médio').then((res)=>{
             this.setState({
                 isLoading: false,
                 metas: res.data
             })
-        })
+        }) 
+    }
+
+    navegarMetaSelecionada(id) {
+        localStorage.setItem('user', id)
     }
 
     deletarMetas(id) {
@@ -34,18 +38,22 @@ class MetasLongo extends React.Component {
 
     renderMetas(metas){
         return (
-            <GridMeta   textPrimeiro={metas.titulo}
-                        textSegundo={metas.tipos}
-                        onClick={() => this.deletarMetas(metas.id)}
-                        key={metas.id}
-            />
-       )
+            <div key={metas.id}>
+                <CardMeta   textPrim={metas.titulo}
+                            textSeg={metas.tipos}
+                            textTec={metas.descricao}
+                            onClickDel={() => this.deletarMetas(metas.id)}
+                            onClickMore={() => this.navegarMetaSelecionada(metas.id)}
+                            toMore={'/meta_selecionada/' + metas.id} 
+                />
+            </div>
+        )
     }
 
     render(metas) {
         return (
             <div>
-                <h1>Metas de longo prazo</h1>
+                <h2>Médio Prazo</h2>
                 <div id="series" className="row list-group" >
                     {this.state.metas.map(this.renderMetas)}
                 </div>                    
@@ -53,4 +61,4 @@ class MetasLongo extends React.Component {
         )
     }
 }
-export default MetasLongo
+export default MetasMedio

@@ -12,14 +12,14 @@ function ButtonSalvar({type, onClick, children, startIcon, size}) {
   const classes = useStyles()
 
   return (
-      <Button variant="contained"
-              size={size}
-              className={classes.button}
-              startIcon={startIcon}
-              type={type}
-              onClick={onClick}
-              children={children}
-      />
+    <Button variant="contained"
+            size={size}
+            className={classes.button}
+            startIcon={startIcon}
+            type={type}
+            onClick={onClick}
+            children={children}
+    />
   )
 }
 export default ButtonSalvar

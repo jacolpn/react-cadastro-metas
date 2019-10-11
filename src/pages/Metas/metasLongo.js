@@ -1,8 +1,8 @@
 import React from 'react'
-import Apis from '../Api'
-import GridMeta from './Grid/GridMeta'
+import Apis from '../../services/api'
+import CardMeta from '../../components/Card/cardMeta'
 
-class Metas extends React.Component {
+class MetasLongo extends React.Component {
     constructor(props) {
         super(props)
 
@@ -20,12 +20,16 @@ class Metas extends React.Component {
 
     loadData() {
         this.setState({isLoading: true})
-        Apis.carregarMetas(this.state.metas).then((res)=>{
+        Apis.carregarMetasPorTipos('Longo').then((res)=>{
             this.setState({
                 isLoading: false,
                 metas: res.data
             })
         })
+    }
+
+    navegarMetaSelecionada(id) {
+        localStorage.setItem('user', id)
     }
 
     deletarMetas(id) {
@@ -34,18 +38,22 @@ class Metas extends React.Component {
 
     renderMetas(metas){
         return (
-                <GridMeta   textPrimeiro={metas.titulo}
-                            textSegundo={metas.tipos}
-                            onClick={() => this.deletarMetas(metas.id)}
-                            key={metas.id}
+            <div key={metas.id}>
+                <CardMeta   textPrim={metas.titulo}
+                            textSeg={metas.tipos}
+                            textTec={metas.descricao}
+                            onClickDel={() => this.deletarMetas(metas.id)}
+                            onClickMore={() => this.navegarMetaSelecionada(metas.id)}
+                            toMore={'/meta_selecionada/' + metas.id} 
                 />
-        )
+            </div>
+       )
     }
 
     render(metas) {
         return (
             <div>
-                <h1>Bem vindo as suas Metas</h1>
+                <h2>Longo Prazo</h2>
                 <div id="series" className="row list-group" >
                     {this.state.metas.map(this.renderMetas)}
                 </div>                    
@@ -53,4 +61,4 @@ class Metas extends React.Component {
         )
     }
 }
-export default Metas
+export default MetasLongo
