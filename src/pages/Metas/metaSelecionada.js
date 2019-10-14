@@ -36,8 +36,8 @@ class MetaSelecionada extends React.Component {
                 <p>{metas.titulo}</p>
                 <p>{metas.tipos}</p>
                 <p>{metas.descricao}</p>
-                <Link to={'/meta_edit/' + metas.id}>Editar</Link>
-                &nbsp;
+                {/* <Link to={'/meta_edit/' + metas.id}>Editar</Link>
+                &nbsp; */}
                 <Link to='/metas'>Voltar</Link>                
             </div>
         )
