@@ -13,13 +13,17 @@ function Cadastro () {
 
     function clicouCadastrar(event) {
         event.preventDefault()        
-        const novaMeta = {
-            titulo,
-            descricao,
-            tipos
+        if (titulo === '' || descricao === '' || tipos === '') {
+            alert('Preencha todos os campos!')
+        } else {
+            const novaMeta = {
+                titulo,
+                descricao,
+                tipos
+            }
+            Apis.salvarMetas(novaMeta)
+            alert('Cadastrado com Sucesso!')
         }
-        Apis.salvarMetas(novaMeta)
-        alert('Cadastrado com Sucesso!')
     }
     
     return (
