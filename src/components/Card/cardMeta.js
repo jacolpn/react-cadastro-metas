@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
     transform: 'rotate(180deg)'
   },
   avatar: {
-    backgroundColor: red[500]
+    backgroundColor: '#0476b8'
   }
 }))
 
@@ -71,9 +71,6 @@ function CardMeta({textPrim,textSeg, textTec, onClickDel,onClickMore, toMore}) {
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <DeleteIcon onClick={onClickDel} />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
         </IconButton>
         <IconButton
           className={clsx(classes.expand, {

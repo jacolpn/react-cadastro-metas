@@ -5,6 +5,7 @@ import Cadastro from './pages/Cadastro/cadastro'
 import Metas from './pages/Metas/metas'
 import MetaSelecionada from './pages/Metas/metaSelecionada'
 import CardMeta from './components/Card/cardMeta'
+import Perfil from './pages/Perfil/Perfil'
 
 function Routes() {
     return (
@@ -15,6 +16,7 @@ function Routes() {
                 <Route path="/metas" component={Metas} />
                 <Route path="/card" component={CardMeta} />
                 <Route path="/meta_selecionada" component={MetaSelecionada} />
+                <Route path="/perfil" component={Perfil} />
             </Switch>
         </BrowserRouter>
     )

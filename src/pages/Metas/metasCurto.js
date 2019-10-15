@@ -5,9 +5,7 @@ import CardMeta from '../../components/Card/cardMeta'
 class MetasCurto extends React.Component {
     constructor(props) {
         super(props)
-
         this.state = {
-            isLoading: false,
             metas: []
         }
         this.renderMetas = this.renderMetas.bind(this)
@@ -19,15 +17,12 @@ class MetasCurto extends React.Component {
     }
 
     loadData() {
-        this.setState({isLoading: true})
         Apis.carregarMetasPorTipos('Curto').then((res)=>{
             this.setState({
-                isLoading: false,
                 metas: res.data
             })
         })
     }
-
     navegarMetaSelecionada(id) {
         localStorage.setItem('user', id)
     }
@@ -52,12 +47,10 @@ class MetasCurto extends React.Component {
 
     render(metas) {
         return (
-            <div>
+            <>
                 <h1>Curto Prazo</h1>
-                <div id="series" className="row list-group" >
-                    {this.state.metas.map(this.renderMetas)}
-                </div>
-            </div>
+                {this.state.metas.map(this.renderMetas)}
+            </>
         )
     }
 }

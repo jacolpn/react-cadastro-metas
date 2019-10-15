@@ -5,9 +5,7 @@ import CardMeta from '../../components/Card/cardMeta'
 class MetasMedio extends React.Component {
     constructor(props) {
         super(props)
-
         this.state = {
-            isLoading: false,
             metas: []
         }
         this.renderMetas = this.renderMetas.bind(this)
@@ -19,10 +17,8 @@ class MetasMedio extends React.Component {
     }
 
     loadData() {
-        this.setState({isLoading: true})
         Apis.carregarMetasPorTipos('Médio').then((res)=>{
             this.setState({
-                isLoading: false,
                 metas: res.data
             })
         }) 
@@ -52,12 +48,10 @@ class MetasMedio extends React.Component {
 
     render(metas) {
         return (
-            <div>
+            <>
                 <h1>Médio Prazo</h1>
-                <div id="series" className="row list-group" >
-                    {this.state.metas.map(this.renderMetas)}
-                </div>                    
-            </div>
+                {this.state.metas.map(this.renderMetas)}
+            </>
         )
     }
 }

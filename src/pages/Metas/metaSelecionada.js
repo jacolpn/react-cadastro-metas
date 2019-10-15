@@ -47,7 +47,7 @@ class MetaSelecionada extends React.Component {
         return (
             <div>
                 <BarraNavegacao />
-                <h1>Metas de médio prazo</h1>
+                <h1>Meta</h1>
                 <div id="series" className="row list-group" >
                     {this.state.metas.map(this.renderMetas)}
                 </div>

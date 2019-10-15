@@ -52,6 +52,16 @@
   font-size: calc(10px + 2vmin);
   background: rgb(248, 248, 248);
 }
+.home a {
+  color: black;
+  text-decoration: none;
+  text-transform: none;
+  font-weight: bold;
+  font-size: 30px;
+}
+.home a:hover {
+  color: #0476b8;
+}
 .cadastro {
   min-height: 100vh;
   display: flex;
@@ -85,13 +95,51 @@
 .metas h1 {
   padding: 22px 0 10px 0;
 }
-.cads {
-  background: blue;
-}
 .metas a {
   color: rgb(90, 89, 89);
   text-decoration: none;
   text-transform: none;
+}
+.perfil {
+  background: rgb(248, 248, 248);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  padding: 30px 0 0 10px;
+
+}
+.gridPrincipal {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  border-radius: 10px;
+}
+.gridPerfil {
+  background: rgb(220, 248, 252);
+  width: 120px;
+  height: 120px;
+  display: flex;
+  float: left;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  border-radius: 10px;
+}
+.gridPerfil2 {
+  background: #fcfcfc;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  float: left;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 480px) {
@@ -108,6 +156,9 @@
     border-radius: 3px;
     padding: 0 20px 0;
     opacity: 5;
+  }
+  .gridPerfil {
+    margin-left: 27px;
   }
 }
 
