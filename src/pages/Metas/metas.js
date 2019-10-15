@@ -8,7 +8,7 @@ function Metas() {
     return (
         <>
             <BarraNavegacao />
-            <div class='metas'>
+            <div className='metas'>
                 <MetasCurto />
                 <MetasMedio />
                 <MetasLongo />
