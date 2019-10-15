@@ -1,3 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -13,10 +22,103 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  margin: -70px 0 0 0;
+  margin: -70px 0 0 -30px;
+  border-radius: 0 2px 10px #999999;
+  
+}
+.nav {
+  background: #181f1d;
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+  text-transform: none;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 0 50px 0;
+}
+.nav a:hover {
+  background: #0476b8;
+  border-radius: 3px;
+  padding: 0 50px 0;
+  opacity: 5;
+}
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  background: rgb(248, 248, 248);
+}
+.cadastro {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  background: rgb(248, 248, 248);
+}
+.cadastro button {
+  margin: 50px;
+  width: 150px;
+  background: #0476b8;
+  color: white;
+  font-weight: bold;
+}
+.cadastro h1 {
+  margin: -200px 0 20px 0;
+}
+.cadastro form {
+  background: #fcfcfc;
+  margin: 10px;
+  width: 280px;
+  border-radius: 8px;
+}
+/*#09d3ac;*/
+.metas {
+  background: rgb(248, 248, 248);
+  padding: 0 0 50px 0;
+}
+.metas h1 {
+  padding: 22px 0 10px 0;
+}
+.cads {
+  background: blue;
+}
+.metas a {
+  color: rgb(90, 89, 89);
+  text-decoration: none;
+  text-transform: none;
 }
 
+@media screen and (max-width: 480px) {
+  .nav a {
+    color: white;
+    text-decoration: none;
+    text-transform: none;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0 20px 0;
+  }
+  .nav a:hover {
+    background: #0476b8;
+    border-radius: 3px;
+    padding: 0 20px 0;
+    opacity: 5;
+  }
+}
 
-.App-link {
-  color: #09d3ac;
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  
+}
+
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+  
+}
+
+@media screen and (min-width: 1200px) {
+  
 }

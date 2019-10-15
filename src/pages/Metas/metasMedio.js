@@ -53,7 +53,7 @@ class MetasMedio extends React.Component {
     render(metas) {
         return (
             <div>
-                <h2>Médio Prazo</h2>
+                <h1>Médio Prazo</h1>
                 <div id="series" className="row list-group" >
                     {this.state.metas.map(this.renderMetas)}
                 </div>                    

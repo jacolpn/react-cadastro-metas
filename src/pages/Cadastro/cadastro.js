@@ -23,33 +23,32 @@ function Cadastro () {
     }
     
     return (
-        <div>
+        <>
             <BarraNavegacao />
-            <h2>Cadastrar uma meta:</h2>
-            <form autoComplete="off" onSubmit={clicouCadastrar} className="">
-                <TextField  placeholder='Coloque um titulo aqui.'
-                            label='Titulo'
-                            value={titulo}
-                            onChange={event => setTitulo(event.target.value)}
-                />
-                <br />
-                <TextField  placeholder='Coloque uma descrição aqui.'
-                            label='Descrição'
-                            value={descricao}
-                            onChange={event => setDescricao(event.target.value)}
-                />
-                <br />
-                <Select value={tipos}
-                        onChange={event => setTipos(event.target.value)}
-                /> 
-                <br />
-                <ButtonSalvar   type='submit'
-                                size='medium'
-                                children='Salvar'
-                                startIcon={<SaveIcon />}
-                />
-            </form>
-        </div>
+            <div className='cadastro'>
+                <h1>Cadastrar Meta</h1>
+                <form autoComplete="off" onSubmit={clicouCadastrar} className="">
+                    <TextField  placeholder='Coloque um titulo aqui.'
+                                label='Titulo'
+                                value={titulo}
+                                onChange={event => setTitulo(event.target.value)}
+                    />
+                    <TextField  placeholder='Coloque uma descrição aqui.'
+                                label='Descrição'
+                                value={descricao}
+                                onChange={event => setDescricao(event.target.value)}
+                    />
+                    <Select value={tipos}
+                            onChange={event => setTipos(event.target.value)}
+                    /> 
+                    <ButtonSalvar   type='submit'
+                                    size='medium'
+                                    children='Salvar'
+                                    startIcon={<SaveIcon />}
+                    />
+                </form>
+            </div>
+        </>
     )
 }
 export default Cadastro

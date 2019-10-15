@@ -6,12 +6,14 @@ import BarraNavegacao from '../BarraNavegacao/barraNavegacao'
 
 function Metas() {
     return (
-        <div>
+        <>
             <BarraNavegacao />
-            <MetasCurto />
-            <MetasMedio />
-            <MetasLongo />
-        </div>
+            <div class='metas'>
+                <MetasCurto />
+                <MetasMedio />
+                <MetasLongo />
+            </div>
+        </>
     )
 }
 export default Metas
