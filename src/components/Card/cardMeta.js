@@ -20,7 +20,8 @@ const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 345, 
     margin: `${theme.spacing(1)}px auto`,
-    padding: theme.spacing(2)
+    padding: theme.spacing(2),
+    background: '#fcfcfc'
   },
   media: {
     height: 0,
@@ -50,7 +51,7 @@ function CardMeta({textPrim,textSeg, textTec, onClickDel,onClickMore, toMore}) {
   }
 
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} >
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
@@ -87,7 +88,7 @@ function CardMeta({textPrim,textSeg, textTec, onClickDel,onClickMore, toMore}) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Descrição:</Typography>
+          <Typography paragraph><strong>Descrição:</strong></Typography>
           <Typography paragraph style={{textAlign: 'justify'}}>
             &nbsp;&nbsp;{textTec}
           </Typography>

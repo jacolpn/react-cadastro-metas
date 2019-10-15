@@ -53,7 +53,7 @@ class MetasLongo extends React.Component {
     render(metas) {
         return (
             <div>
-                <h2>Longo Prazo</h2>
+                <h1>Longo Prazo</h1>
                 <div id="series" className="row list-group" >
                     {this.state.metas.map(this.renderMetas)}
                 </div>                    

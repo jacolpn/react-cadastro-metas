@@ -7,7 +7,7 @@ function Home() {
     return (
         <>
             <BarraNavegacao />
-            <div className='App-header'>
+            <div className='home'>
                 <h1>Cadastro de Metas</h1>
                 <img src={logo} className="App-logo" alt="logo" />
             </div>
