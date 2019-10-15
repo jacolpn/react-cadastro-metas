@@ -6,28 +6,15 @@
   box-sizing: border-box;
   font-family: Helvetica, sans-serif;
 }
-
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 50vmin;
 }
-
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  margin: -70px 0 0 -30px;
-  border-radius: 0 2px 10px #999999;
-  
-}
 .nav {
   background: #181f1d;
+  position: absolute;
+  width: 100%;
+  height: 33px;
+  text-align: center;
 }
 .nav a {
   color: white;
@@ -51,18 +38,16 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   background: rgb(248, 248, 248);
+  text-align: center;
+
 }
 .home a {
   color: black;
   text-decoration: none;
   text-transform: none;
-  font-weight: bold;
-  font-size: 30px;
-}
-.home a:hover {
-  color: #0476b8;
 }
 .cadastro {
+  text-align: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -79,7 +64,7 @@
   font-weight: bold;
 }
 .cadastro h1 {
-  margin: -200px 0 20px 0;
+  margin: -175px 0 20px 0;
 }
 .cadastro form {
   background: #fcfcfc;
@@ -91,14 +76,24 @@
 .metas {
   background: rgb(248, 248, 248);
   padding: 0 0 50px 0;
+  text-align: center;
 }
 .metas h1 {
-  padding: 22px 0 10px 0;
+  padding: 60px 0 10px 0;
 }
 .metas a {
   color: rgb(90, 89, 89);
   text-decoration: none;
   text-transform: none;
+}
+.imgPerfil {
+  margin-top: 40px;
+  padding-top: 40px;
+  margin-bottom: -150px;
+}
+.imgPerfil h6 {
+ margin-top: -15px;
+ font-weight: normal;
 }
 .perfil {
   background: rgb(248, 248, 248);
@@ -118,7 +113,7 @@
   border-radius: 10px;
 }
 .gridPerfil {
-  background: rgb(220, 248, 252);
+  background: #0476b8;
   width: 120px;
   height: 120px;
   display: flex;
@@ -128,11 +123,13 @@
   justify-content: center;
   margin: 10px;
   border-radius: 10px;
+  color: #fcfcfc;
+  font-weight: bold;
 }
 .gridPerfil2 {
   background: #fcfcfc;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   display: flex;
   float: left;
   flex-direction: row;
@@ -141,8 +138,10 @@
   margin: 10px;
   border-radius: 10px;
 }
-
 @media screen and (max-width: 480px) {
+  .nav {
+    height: 22px;
+  }
   .nav a {
     color: white;
     text-decoration: none;
@@ -150,6 +149,7 @@
     font-weight: bold;
     font-size: 20px;
     padding: 0 20px 0;
+    
   }
   .nav a:hover {
     background: #0476b8;
@@ -160,16 +160,16 @@
   .gridPerfil {
     margin-left: 27px;
   }
+  .metas h1 {
+    padding: 35px 0 10px 0;
+  }
 }
-
 @media screen and (min-width: 481px) and (max-width: 768px) {
   
 }
-
 @media screen and (min-width: 769px) and (max-width: 1199px) {
   
 }
-
 @media screen and (min-width: 1200px) {
   
 }

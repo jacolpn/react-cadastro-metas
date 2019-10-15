@@ -12,8 +12,9 @@ function Home() {
             <div className='home'>
                 <h1>Cadastro de Metas</h1>
                 <img src={logo} className="App-logo" alt="logo" />
-                <Link to={'/perfil'}>
+                <Link to={'/perfil'} className='imgPerfil'>
                     <img src='/img/IconeMedalha.png' />
+                    <h6>Veja suas insígnias.</h6>
                 </Link>
             </div>
         </>

@@ -31,7 +31,7 @@ function Cadastro () {
             <BarraNavegacao />
             <div className='cadastro'>
                 <h1>Cadastrar Meta</h1>
-                <form autoComplete="off" onSubmit={clicouCadastrar} className="">
+                <form autoComplete="off" onSubmit={clicouCadastrar}>
                     <TextField  placeholder='Coloque um titulo aqui.'
                                 label='Titulo'
                                 value={titulo}
