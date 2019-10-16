@@ -3,17 +3,20 @@ import MetasCurto from './metasCurto'
 import MetasLongo from './metasLongo'
 import MetasMedio from './metasMedio'
 import BarraNavegacao from '../BarraNavegacao/barraNavegacao'
+import { withStyles } from '@material-ui/styles'
+import styles from './styles'
 
-function Metas() {
+const Metas = props => {
+    const { classes } = props
     return (
-        <>
+        <div className={classes.principal}>
             <BarraNavegacao />
-            <div className='metas'>
+            <div className={classes.metas}>
                 <MetasCurto />
                 <MetasMedio />
                 <MetasLongo />
             </div>
-        </>
+        </div>
     )
 }
-export default Metas
+export default withStyles(styles, { withTheme: true})(Metas)

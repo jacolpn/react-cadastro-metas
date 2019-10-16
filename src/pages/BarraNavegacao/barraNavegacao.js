@@ -1,13 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
 
-function BarraNavegacao () {
+const BarraNavegacao = props => {
+  const { classes } = props
     return (
-      <div className='nav'>
-        <Link to={'/'}>Início</Link>
-        <Link to={'/cadastro'}>Cadastro</Link>
-        <Link to={'/metas'}>Metas</Link>
+      <div className={classes.navWrapper}>
+        <Link to={'/'} className={classes.link}>Início</Link>
+        <Link to={'/cadastro'} className={classes.link}>Cadastro</Link>
+        <Link to={'/metas'} className={classes.link}>Metas</Link>
       </div>
     )
 }
-export default BarraNavegacao
+export default withStyles(styles, { withTheme: true })(BarraNavegacao);

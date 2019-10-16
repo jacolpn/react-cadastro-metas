@@ -5,8 +5,11 @@ import Select from '../../components/Select/select'
 import ButtonSalvar from '../../components/Button/buttonSalvar'
 import SaveIcon from '@material-ui/icons/Save'
 import BarraNavegacao from '../BarraNavegacao/barraNavegacao'
+import { withStyles } from '@material-ui/styles'
+import styles from './styles'
 
-function Cadastro () {
+const Cadastro = props => {
+    const { classes } = props
     const [titulo, setTitulo] = useState('')
     const [descricao, setDescricao] = useState('')
     const [tipos, setTipos] = useState('')
@@ -27,24 +30,28 @@ function Cadastro () {
     }
     
     return (
-        <>
+        <div className={classes.principal}>
             <BarraNavegacao />
-            <div className='cadastro'>
-                <h1>Cadastrar Meta</h1>
-                <form autoComplete="off" onSubmit={clicouCadastrar}>
+            <div className={classes.cadastro}>
+                <h1 className={classes.h1}>Cadastrar Meta</h1>
+                <form autoComplete="off" onSubmit={clicouCadastrar} className={classes.form}>
                     <TextField  placeholder='Coloque um titulo aqui.'
                                 label='Titulo'
                                 value={titulo}
                                 onChange={event => setTitulo(event.target.value)}
+                                className={classes.text}
                     />
+                    <br />
                     <TextField  placeholder='Coloque uma descrição aqui.'
                                 label='Descrição'
                                 value={descricao}
                                 onChange={event => setDescricao(event.target.value)}
                     />
+                    <br />
                     <Select value={tipos}
                             onChange={event => setTipos(event.target.value)}
-                    /> 
+                    />
+                    <br /><br />
                     <ButtonSalvar   type='submit'
                                     size='medium'
                                     children='Salvar'
@@ -52,7 +59,7 @@ function Cadastro () {
                     />
                 </form>
             </div>
-        </>
+        </div>
     )
 }
-export default Cadastro
+export default withStyles(styles, { withTheme: true})(Cadastro)
