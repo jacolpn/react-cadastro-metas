@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 345, 
     margin: `${theme.spacing(1)}px auto`,
     padding: theme.spacing(2),
-    background: '#fcfcfc'
+    background: 'white'
   },
   media: {
     height: 0,
@@ -37,7 +37,12 @@ const useStyles = makeStyles(theme => ({
   },
   avatar: {
     backgroundColor: '#0476b8'
-  }
+  },
+  buttonMore: {
+    textTransform: 'none',
+    textDecoration: 'none',
+    color: '#4F4F4F'
+  },
 }))
 
 function CardMeta({textPrim,textSeg, textTec, onClickDel,onClickMore, toMore}) {
@@ -58,7 +63,7 @@ function CardMeta({textPrim,textSeg, textTec, onClickDel,onClickMore, toMore}) {
         }
         action={
           <IconButton aria-label="settings">
-            <Link  onClick={onClickMore} to={toMore}><MoreVertIcon/></Link>
+            <Link className={classes.buttonMore} onClick={onClickMore} to={toMore}><MoreVertIcon/></Link>
           </IconButton>
         }
         title={textPrim}

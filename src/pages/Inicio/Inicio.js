@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import BarraNavegacao from '../BarraNavegacao/barraNavegacao'
+import BarraNavegacao from '../BarraNavegacao/BarraNavegacao'
 import { withStyles } from '@material-ui/styles'
 import styles from './styles'
 
-import logo from '../../logo.svg'
+import logo from '../../assets/images/logo.svg'
 import imagemMedalha01 from '../../assets/images/IconeMedalha.png'
 
-const Home = props => {
+const Inicio = props => {
     const { classes } = props
     return (
         <div className={classes.principal}>
@@ -23,4 +23,4 @@ const Home = props => {
         </div>
     )
 }
-export default withStyles(styles, { withTheme: true})(Home)
+export default withStyles(styles, { withTheme: true})(Inicio)

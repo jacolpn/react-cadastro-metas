@@ -1,7 +1,7 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import { withStyles } from '@material-ui/styles'
-import BarraNavegacao from '../BarraNavegacao/barraNavegacao'
+import BarraNavegacao from '../BarraNavegacao/BarraNavegacao'
 import Apis from '../../services/api'
 import styles from './styles'
 
@@ -10,6 +10,7 @@ import icone02MedalhaCor from '../../assets/images/Icone02MedalhaCor.png'
 import icone02MedalhaPreto from '../../assets/images/Icone02MedalhaPreto.png'
 import icone03MedalhaCor from '../../assets/images/Icone03MedalhaCor.png'
 import icone03MedalhaPreto from '../../assets/images/Icone03MedalhaPreto.png'
+import perfilUSR from '../../assets/images/IconeUSR.png'
 
 class Perfil extends React.Component {
     constructor(props) {
@@ -40,7 +41,12 @@ class Perfil extends React.Component {
             <div className={classes.principal}>
                 <BarraNavegacao />
                 <div className={classes.perfilWrapper}>
-                    <h1 className={classes.h1}>Olá Usuário!</h1>
+                    <div className={classes.usuario}>
+                        <div className={classes.imgUSR}>
+                            <img src={perfilUSR} alt='usuário' width='90px'/>
+                        </div>
+                        <h1 className={classes.nomeUsuario}>Olá Usuário!</h1>
+                    </div>
                     <p className={classes.p}>Insígnias conquistadas:</p>
                     <Grid className={classes.perfilPrincipal}>
                         <Grid className={classes.insignia1}>

@@ -2,7 +2,7 @@ export default theme => ({
     principal: {
         width: '10vh%',
         height: '98vh',
-        margin: '-8px',
+        margin: '-8px'
     },
     metas: {
         backgroundColor: 'rgb(248, 248, 248)',
@@ -10,6 +10,11 @@ export default theme => ({
         textAlign: 'center',
         display: 'flex',
         flexDirection: 'column',
-        padding: '30px 10px 10px 10px'
+        padding: '50px 15px 15px 15px'
     },
+    '@media (max-width: 480px)' : { 
+        metas: {
+            padding: '30px 15px 15px 15px'
+        },
+    }
 })

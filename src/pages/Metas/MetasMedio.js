@@ -1,6 +1,6 @@
 import React from 'react'
 import Apis from '../../services/api'
-import CardMeta from '../../components/Card/cardMeta'
+import CardMeta from '../../components/Card/CardMeta'
 
 class MetasMedio extends React.Component {
     constructor(props) {

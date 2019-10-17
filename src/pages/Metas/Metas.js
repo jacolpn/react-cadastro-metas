@@ -1,8 +1,8 @@
 import React from 'react'
-import MetasCurto from './metasCurto'
-import MetasLongo from './metasLongo'
-import MetasMedio from './metasMedio'
-import BarraNavegacao from '../BarraNavegacao/barraNavegacao'
+import MetasCurto from './MetasCurto'
+import MetasLongo from './MetasLongo'
+import MetasMedio from './MetasMedio'
+import BarraNavegacao from '../BarraNavegacao/BarraNavegacao'
 import { withStyles } from '@material-ui/styles'
 import styles from './styles'
 

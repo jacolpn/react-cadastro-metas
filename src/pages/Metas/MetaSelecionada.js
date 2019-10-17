@@ -1,7 +1,7 @@
 import React from 'react'
 import Apis from '../../services/api'
 import {Link} from 'react-router-dom'
-import BarraNavegacao from '../BarraNavegacao/barraNavegacao'
+import BarraNavegacao from '../BarraNavegacao/BarraNavegacao'
 
 class MetaSelecionada extends React.Component {
     constructor(props) {
