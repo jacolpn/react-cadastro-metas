@@ -1,8 +1,7 @@
 export default theme => ({
     principal: {
         width: '100vh%',
-        height: '98vh',
-        margin: '-8px'
+        height: '100vh',
     },       
     perfilWrapper: {
         backgroundColor: 'rgb(248, 248, 248)',

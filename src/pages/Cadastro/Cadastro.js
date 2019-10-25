@@ -15,7 +15,7 @@ const Cadastro = props => {
     const [tipos, setTipos] = useState('')
 
     function clicouCadastrar(event) {
-        event.preventDefault()        
+        event.preventDefault()
         if (titulo === '' || descricao === '' || tipos === '') {
             alert('Preencha todos os campos!')
         } else {
@@ -39,7 +39,6 @@ const Cadastro = props => {
                                 label='Titulo'
                                 value={titulo}
                                 onChange={event => setTitulo(event.target.value)}
-                                className={classes.text}
                     />
                     <br />
                     <TextField  placeholder='Coloque uma descrição aqui.'

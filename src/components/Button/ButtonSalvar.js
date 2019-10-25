@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from '@material-ui/core/Button'
 
-function ButtonSalvar({type, onClick, children, startIcon, size}) {
+function ButtonSalvar({color, type, onClick, children, startIcon, size}) {
   return (
     <Button variant="contained"
             size={size}
@@ -9,6 +9,7 @@ function ButtonSalvar({type, onClick, children, startIcon, size}) {
             type={type}
             onClick={onClick}
             children={children}
+            color={color}
     />
   )
 }

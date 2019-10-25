@@ -39,7 +39,7 @@ class MetasCurto extends React.Component {
                             textTec={metas.descricao}
                             onClickDel={() => this.deletarMetas(metas.id)}
                             onClickMore={() => this.navegarMetaSelecionada(metas.id)}
-                            toMore={'/meta_selecionada/' + metas.id} 
+                            toMore={'/meta_selecionada/' + metas.id}
                 />
             </div>
         )

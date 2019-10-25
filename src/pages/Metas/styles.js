@@ -1,8 +1,7 @@
 export default theme => ({
     principal: {
         width: '10vh%',
-        height: '98vh',
-        margin: '-8px'
+        height: '100vh',
     },
     metas: {
         backgroundColor: 'rgb(248, 248, 248)',
