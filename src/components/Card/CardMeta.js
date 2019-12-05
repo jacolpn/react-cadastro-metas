@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-function CardMeta({textPrim,textSeg, textTec, onClickDel,onClickMore, toMore}) {
+function CardMeta({textPrim, textSeg, textTec, onClickDel,onClickMore, toMore}) {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
 
