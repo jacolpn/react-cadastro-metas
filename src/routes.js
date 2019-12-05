@@ -6,7 +6,6 @@ import Cadastro from './pages/Cadastro/Cadastro'
 import Metas from './pages/Metas/Metas'
 import MetaSelecionada from './pages/Metas/MetaSelecionada'
 import Perfil from './pages/Perfil/Perfil'
-import Cadastro02 from './pages/Cadastro/Cadastro02'
 import Login from './pages/Login/Login'
 import EditarMeta from './pages/Metas/EditarMeta'
 
@@ -29,7 +28,6 @@ const Routes = () => (
                 <PrivateRoute exact path="/" component={Inicio} />
                 <Route path="/login" component={Login} />
                 <Route path="/cadastro" component={Cadastro} />
-                <Route path="/cadastro02" component={Cadastro02} />
                 <Route path="/metas" component={Metas} />
                 <Route path="/meta_selecionada" component={MetaSelecionada} />
                 <Route path="/perfil" component={Perfil} />
